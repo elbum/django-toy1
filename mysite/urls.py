@@ -23,7 +23,7 @@ urlpatterns = [
     path('',views.HomeView.as_view(),name='home'),
     path('polls/', include('polls.urls')),
     path('books/', include('books.urls')),
-    # path('polls/<int:question_id>/', views.detail , name='detail'),
-    # path('polls/<int:question_id>/result', views.results , name='results'),
-    # path('polls/<int:question_id>/vote/',views.vote, name='vote'),
+    #path('polls/<int:question_id>/', views.detail , name='detail'),
+    #path('polls/<int:question_id>/result', views.results , name='results'),
+    #path('polls/<int:question_id>/vote/',views.vote, name='vote'),
 ]
