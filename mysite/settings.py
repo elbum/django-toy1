@@ -31,7 +31,7 @@ SECRET_KEY = 'b3^095z-ai*n$f1-h4(c=879%u%n5m@r5$&r8&(lgyg7g7i+-)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','0.0.0.0']
+ALLOWED_HOSTS = ['alboom.pythonanywhere.com','localhost','127.0.0.1','0.0.0.0']
 
 
 # Application definition
