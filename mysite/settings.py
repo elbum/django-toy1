@@ -22,8 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'b3^095z-ai*n$f1-h4(c=879%u%n5m@r5$&r8&(lgyg7g7i+-)'
 
+#SECRET_KEY = os.environ['SECRET_KEY']
+#or
+#with open('os.path.join(BASE_DIR,'www_dir','secret_key.txt')) as f:
+#   SECRET_KEY = f.read().strip()
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','0.0.0.0']
 
@@ -79,7 +85,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db', 'db.sqlite3'),
     }
 }
 
@@ -119,6 +125,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR,'www_dir','static')
 
 STATIC_URL = '/static/'
 LOG_PATH = os.path.join(BASE_DIR, 'log')
@@ -137,8 +144,8 @@ LOGGING = {
         'file':{
             'level':'DEBUG',
             'class':'logging.FileHandler',
-            #'filename':os.path.join(BASE_DIR,'logs','mysite.log'),
-            'filename': './debug.log',
+            'filename':os.path.join(BASE_DIR,'logs','mysite.log'),
+            #'filename': './debug.log',
             'formatter':'verbose'
             },
     },
